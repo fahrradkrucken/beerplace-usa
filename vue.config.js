@@ -1,4 +1,5 @@
 // Vue JS CLI Config (+ Webpack)
 module.exports = {
-    publicPath: ''
+    publicPath: '',
+    outputDir: 'docs'
 };
