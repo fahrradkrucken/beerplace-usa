@@ -1,0 +1,84 @@
+@import "vars";
+
+// -- Mini-clean-reset + Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  box-sizing: border-box;
+}
+
+// -- Icons Font size global
+.material-icons {
+  font-size: $font-size-icons;
+  line-height: $font-size-icons;
+  vertical-align: middle;
+}
+
+// --
+// -- Common styles
+// --
+.page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: $color-gray;
+
+  @include media-md-down {
+    height: auto;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+h6, h5, h4 {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  line-height: 1.2;
+}
+
+p {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  line-height: 1.4;
+  font-size: $font-size-txt;
+  font-weight: normal;
+}
+
+h6 {
+  font-size: $font-size-label;
+  font-weight: normal;
+  font-style: italic;
+}
+
+h5 {
+  font-size: $font-size-subtitle;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: $font-size-title;
+  font-weight: bold;
+}
+
+p, h6, h5, h4 {
+  a {
+    text-decoration: none;
+    color: $color-primary-light;
+
+    transition: .25s;
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
+  }
+}
+
+.txt {
+  &-center {
+    text-align: center;
+  }
+}

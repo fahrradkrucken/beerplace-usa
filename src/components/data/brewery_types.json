@@ -1,0 +1,38 @@
+[
+  {
+    "id": "all",
+    "name": "All"
+  },
+  {
+    "id": "micro",
+    "name": "Micro"
+  },
+  {
+    "id": "regional",
+    "name": "Regional"
+  },
+  {
+    "id": "large",
+    "name": "Large"
+  },
+  {
+    "id": "planning",
+    "name": "Planning"
+  },
+  {
+    "id": "bar",
+    "name": "Bar"
+  },
+  {
+    "id": "brewpub",
+    "name": "Brew Pub"
+  },
+  {
+    "id": "contract",
+    "name": "Contract"
+  },
+  {
+    "id": "proprietor",
+    "name": "Proprietor"
+  }
+]
