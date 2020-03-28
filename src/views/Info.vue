@@ -13,7 +13,7 @@
             </p>
             <h5>Why?</h5>
             <p>
-                Well, because we can!
+                Well, because we can! And yes, you can just use FourSquare instead. Nobody needs this thing, actually.
             </p>
             <h6>
                 And that's what creators of Open Brewery Database says about that:
@@ -27,7 +27,7 @@
                 Cheers!"
             </p>
             <h5>How?</h5>
-            <p>You can see how it was made on <a href="" target="_blank">GitHub</a>.</p>
+            <p>You can see how it was made on <a href="https://github.com/fahrradkrucken/beerplace-usa" target="_blank">GitHub</a>.</p>
         </div>
     </section>
 </template>
