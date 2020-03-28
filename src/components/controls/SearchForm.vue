@@ -5,6 +5,9 @@
         <div class="form-search__title">
             Find Breweries
         </div>
+        <div class="form-search__subtitle">
+            Search breweries, bars and brew pubs in your state.
+        </div>
 
         <div class="form-search__field">
             <label for="brewery-type" class="form-search__field-label">
@@ -69,12 +72,6 @@
                 }
             };
         },
-        created() {
-            this.$emit('params-updated', {
-                breweryType: this.form.type.value,
-                breweryLocationState: this.form.state.value,
-            })
-        },
         methods: {
             onFormSubmit(event) {
                 event.preventDefault();
@@ -109,6 +106,15 @@
             font-weight: bold;
             text-align: center;
             text-transform: uppercase;
+        }
+        &__subtitle {
+            width: 100%;
+            min-height: 38px;
+            padding-bottom: 10px;
+
+            font-size: $font-size-txt;
+            color: $color-font-light;
+            text-align: center;
         }
 
         &__field {
