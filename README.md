@@ -16,3 +16,7 @@ npm run serve
 ```
 npm run build
 ```
+
+### Source code note
+
+Please note that it's a project built for fun in about 3 days, so you shouldn't expect some impressive code here.
