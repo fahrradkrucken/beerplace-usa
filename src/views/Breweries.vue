@@ -43,7 +43,7 @@
 
             <template v-else>
                 <div class="page-breweries__not-found">
-                    <h4>Breweries not found by given query :(</h4>
+                    <h4>{{resultErrorMsg}}</h4>
                 </div>
             </template>
 
@@ -89,6 +89,7 @@
                     },
                 },
                 resultList: [], // @TODO: Add Error Message
+                resultErrorMsg: "Breweries not found by given query :(",
                 mapControls: {
                     zoom: 7,
                     latitude: BreweryStateObj.latitude,
@@ -99,7 +100,10 @@
         },
         methods: {
             formatBreweriesList(breweriesListInitial) {
-                if (!breweriesListInitial.length) return [];
+                if (!breweriesListInitial.length) {
+                    this.resultErrorMsg = "Breweries not found by given query :(";
+                    return [];
+                }
                 return breweriesListInitial.map(function (breweryObject, idx) {
                     breweryObject.has_coordinates = breweryObject.latitude && breweryObject.longitude;
                     breweryObject.is_active = false;
@@ -141,6 +145,8 @@
                     }
                 })
                 .catch((error) => {
+                    this.resultErrorMsg = "Something went wrong with OBDB API call :(";
+                    this.resultList = [];
                     console.log(error);
                 })
                 .finally(() => {
