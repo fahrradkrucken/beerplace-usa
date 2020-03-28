@@ -1,5 +1,7 @@
 # beerplace-usa
 
+[BeerPlace USA](https://fahrradkrucken.github.io/beerplace-usa/#/info)
+
 ## Project setup
 ```
 npm install
@@ -14,6 +16,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
