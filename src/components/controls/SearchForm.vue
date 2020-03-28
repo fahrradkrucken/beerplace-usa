@@ -46,8 +46,8 @@
 </template>
 
 <script>
-    import ListUsStates from '../data/us_states';
-    import ListBreweryTypes from '../data/brewery_types';
+    import ListUsStates from '../../app/data/us_states';
+    import ListBreweryTypes from '../../app/data/brewery_types';
 
     let typeInitialValue = ListBreweryTypes[Math.floor(Math.random() * ListBreweryTypes.length)].id;
     let stateInitialValue = ListUsStates[Math.floor(Math.random() * ListUsStates.length)]

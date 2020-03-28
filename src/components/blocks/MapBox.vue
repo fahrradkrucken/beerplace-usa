@@ -31,14 +31,7 @@
     import {Icon} from 'leaflet';
 
     import {LMap, LTileLayer, LMarker, LPopup} from 'vue2-leaflet';
-    import BreweryPopup from "./blocks/BreweryPopup";
-
-    delete Icon.Default.prototype._getIconUrl;
-    Icon.Default.mergeOptions({
-        iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-        iconUrl: require('leaflet/dist/images/marker-icon.png'),
-        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-    });
+    import BreweryPopup from "./BreweryPopup";
 
     export default {
         name: "MapBox",
@@ -90,13 +83,13 @@
                 },
                 mapBreweries: breweriesObjects,
                 mapIconDefault: new Icon({
-                    iconUrl: require('../assets/marker-icon.png'),
+                    iconUrl: require('../../assets/marker-icon.png'),
                     iconSize: [25, 41],
                     iconAnchor: [25, 41],
                     popupAnchor: [-12, -41],
                 }),
                 mapIconActive: new Icon({
-                    iconUrl: require('../assets/marker-icon-active.png'),
+                    iconUrl: require('../../assets/marker-icon-active.png'),
                     iconSize: [25, 41],
                     iconAnchor: [25, 41],
                     popupAnchor: [-12, -41],
@@ -137,7 +130,7 @@
 </script>
 
 <style lang="scss">
-    @import "../assets/vars";
+    @import "../../assets/vars";
 
     .map-box {
         display: block;

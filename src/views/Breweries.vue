@@ -54,12 +54,12 @@
 
 <script>
     import axios from 'axios';
-    import API from "../api-client";
-    import ListUSStates from '../components/data/us_states';
-    import ListBreweryTypes from '../components/data/brewery_types';
+    import API from "../app/api-obdb";
+    import ListUSStates from '../app/data/us_states';
+    import ListBreweryTypes from '../app/data/brewery_types';
 
     import BreweriesList from "../components/blocks/BreweriesList";
-    import MapBox from "../components/MapBox";
+    import MapBox from "../components/blocks/MapBox";
 
     export default {
         name: "Breweries",

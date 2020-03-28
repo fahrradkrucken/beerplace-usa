@@ -10,13 +10,11 @@
 <script>
     import TopBar from "./components/TopBar";
     import SearchForm from "./components/controls/SearchForm";
-    import InfoBox from "./components/blocks/InfoBox";
 
     export default {
         components: {
             TopBar,
-            SearchForm,
-            InfoBox
+            SearchForm
         },
         data() {
             return {

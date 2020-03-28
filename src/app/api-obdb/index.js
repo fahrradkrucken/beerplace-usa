@@ -1,4 +1,4 @@
-export default class BrewApi {
+export default class ApiOBDB {
     static get baseUrl() {
         return "https://api.openbrewerydb.org/breweries";
     }
