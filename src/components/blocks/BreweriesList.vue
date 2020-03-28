@@ -6,6 +6,7 @@
                     <breweries-list-item
                             :key="item.id"
                             :brewery-object="item"
+                            :expand-info="item.is_active"
                     ></breweries-list-item>
                 </template>
             </div>

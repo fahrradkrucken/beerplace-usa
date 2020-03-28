@@ -1,5 +1,7 @@
 <template>
-    <article :class="{'b-list__item': true, 'active': brewery.is_active}">
+    <article
+            :id="'brewery-info-' + brewery.id"
+            :class="{'b-list__item': true, 'active': brewery.is_active}">
         <table>
             <thead>
             <tr>
@@ -47,18 +49,25 @@
 </template>
 
 <script>
+    import EventsList from '../../app/data/events_list';
+
     export default {
         name: "BreweriesListItem",
         props: {
             breweryObject: {
                 type: Object,
                 required: true
+            },
+            expandInfo: {
+                type: Boolean,
+                required: false,
+                default: false
             }
         },
         data() {
             return {
                 brewery: this.breweryObject,
-                expand: false,
+                expand: this.expandInfo,
             };
         },
         methods: {
@@ -66,7 +75,7 @@
                 this.expand = !this.expand;
             },
             locateBrewery() {
-                this.$eventBus.$emit('locate-brewery', this.brewery);
+                this.$eventBus.$emit(EventsList.LocateBreweryOnMap, this.brewery);
             }
         },
         filters: {

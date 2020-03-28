@@ -23,7 +23,7 @@
                             State: {{query.paramsData.breweryLocationState.state}}
                         </div>
                     </div>
-                    <div class="page-breweries__sidebar-box">
+                    <div id="page-breweries__sidebar-box" class="page-breweries__sidebar-box">
                         <breweries-list
                                 :breweries-array="resultList"
                         ></breweries-list>
@@ -57,6 +57,7 @@
     import API from "../app/api-obdb";
     import ListUSStates from '../app/data/us_states';
     import ListBreweryTypes from '../app/data/brewery_types';
+    import EventsList from '../app/data/events_list';
 
     import BreweriesList from "../components/blocks/BreweriesList";
     import MapBox from "../components/blocks/MapBox";
@@ -87,7 +88,7 @@
                         breweryLocationState: BreweryStateObj,
                     },
                 },
-                resultList: [],
+                resultList: [], // @TODO: Add Error Message
                 mapControls: {
                     zoom: 7,
                     latitude: BreweryStateObj.latitude,
@@ -110,9 +111,23 @@
                         breweryObject.address.replace(" ", "+");
                     return breweryObject;
                 });
+            },
+            locateBreweryInList(breweryObj) {
+                let sidebarHtmlEl = document.getElementById('page-breweries__sidebar-box');
+                let breweryHtmlEl = document.getElementById('brewery-info-' + breweryObj.id);
+
+                if (typeof breweryHtmlEl !== "undefined" && breweryHtmlEl) {
+                    sidebarHtmlEl.scrollTo({
+                        top: breweryHtmlEl.offsetTop - 10,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
             }
         },
         created() {
+            this.$eventBus.$on(EventsList.LocateBreweryInList, this.locateBreweryInList);
+
             let queryString = API.createQuery({
                 per_page: 50,
                 by_type: (this.query.params.breweryType !== 'all') ? this.query.params.breweryType : null,
@@ -130,7 +145,7 @@
                 })
                 .finally(() => {
                     this.query.isLoading = false;
-                })
+                });
         },
     }
 </script>

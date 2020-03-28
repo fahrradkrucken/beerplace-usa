@@ -14,7 +14,7 @@
                             :key="brewery.id"
                             :lat-lng="[brewery.latitude, brewery.longitude]"
                             :icon="!brewery.is_active ? mapIconDefault : mapIconActive"
-                            @click="markerActiveToggle(index)">
+                            @click="activeToggle(index)">
                         <l-popup :options="{ permanent: true, interactive: true }">
                             <brewery-popup :brewery-object="brewery"></brewery-popup>
                         </l-popup>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+    import EventsList from '../../app/data/events_list';
+
     import L from 'leaflet';
     import {latLng} from "leaflet";
     import {Icon} from 'leaflet';
@@ -97,6 +99,10 @@
             };
         },
         methods: {
+            activeToggle(brewery_idx) {
+                this.$eventBus.$emit(EventsList.LocateBreweryInList, this.mapBreweries[brewery_idx]);
+                this.markerActiveToggle(brewery_idx);
+            },
             markerActiveToggle(brewery_idx, applyZoom) {
                 for (let i = 0; i < this.mapBreweries.length; i++) {
                     this.mapBreweries[i].is_active = (i === brewery_idx);
@@ -124,7 +130,7 @@
             }
         },
         created() {
-            this.$eventBus.$on('locate-brewery', this.locateBrewery);
+            this.$eventBus.$on(EventsList.LocateBreweryOnMap, this.locateBrewery);
         }
     }
 </script>
