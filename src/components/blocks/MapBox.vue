@@ -79,7 +79,8 @@
                     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                     mapOptions: {
-                        zoomSnap: 0.5
+                        zoomSnap: 0.5,
+                        zoomControl: false,
                     },
                     showMap: true
                 },

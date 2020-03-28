@@ -1,8 +1,6 @@
 <template>
     <div id="app" :class="{'app': true, 'sidebar-open': sidebarState}">
-        <top-bar @sidebar-toggle="toggleSidebarState">
-
-        </top-bar>
+        <top-bar @sidebar-toggle="toggleSidebarState"></top-bar>
         <router-view/>
     </div>
 </template>
@@ -18,20 +16,13 @@
         },
         data() {
             return {
-                sidebarState: false,
-                params: {
-                    // breweryType:
-                }
+                sidebarState: true,
             };
         },
         methods: {
-            toggleSidebarState(sidebarState) {
-                this.sidebarState = sidebarState;
+            toggleSidebarState() {
+                this.sidebarState = !this.sidebarState;
             },
-            updateParams(attributes) {
-                // console.dir(attributes)
-            }
-
         }
     }
 </script>

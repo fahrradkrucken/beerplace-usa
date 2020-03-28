@@ -1,5 +1,9 @@
 <template>
     <div class="top-bar">
+        <div class="top-bar__link" title="Sidebar Toggle"
+             @click="sidebarToggleEmit">
+            <i class="material-icons">menu</i>
+        </div>
         <div class="top-bar__brand">BeerPlace USA</div>
         <nav class="top-bar__links">
             <a class="top-bar__link" href="#/search" title="Find Breweries">
@@ -17,6 +21,7 @@
 </template>
 
 <script>
+    import EventsList from "../app/data/events_list";
 
     import SearchForm from "./controls/SearchForm";
 
@@ -25,15 +30,9 @@
         components: {
             SearchForm
         },
-        data() {
-            return {
-                sidebarState: false,
-            };
-        },
         methods: {
-            sidebarToggle() {
-                this.sidebarState = !this.sidebarState;
-                this.$emit('sidebar-toggle', this.sidebarState);
+            sidebarToggleEmit() {
+                this.$emit(EventsList.SidebarToggle);
             }
         }
     }
@@ -75,6 +74,10 @@
             color: $color-font-light;
             font-weight: 600;
             padding-left: 15px;
+
+            @include media-sm-down {
+                font-size: $font-size-txt;
+            }
         }
     }
 </style>

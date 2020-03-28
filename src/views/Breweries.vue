@@ -219,7 +219,7 @@
             position: fixed;
             z-index: 500;
 
-            left: 0;
+            left: -300px;
             top: 60px;
             width: 300px;
             height: calc(100vh - 60px);
@@ -258,9 +258,16 @@
             width: 100%;
             height: calc(100vh - 60px);
 
-            padding-left: 300px;
+            padding-left: 0;
 
             transition: .5s;
         }
+    }
+
+    .sidebar-open .page-breweries__sidebar {
+        left: 0;
+    }
+    .sidebar-open .page-breweries__map {
+        padding-left: 300px;
     }
 </style>
