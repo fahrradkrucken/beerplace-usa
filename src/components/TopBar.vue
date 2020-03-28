@@ -2,13 +2,14 @@
     <div class="top-bar">
         <div class="top-bar__brand">BeerPlace USA</div>
         <nav class="top-bar__links">
-            <a class="top-bar__link" href="#/search">
+            <a class="top-bar__link" href="#/search" title="Find Breweries">
                 <i class="material-icons">search</i>
             </a>
-            <a class="top-bar__link" href="#/info">
+            <a class="top-bar__link" href="#/info" title="About this project">
                 <i class="material-icons">help</i>
             </a>
-            <a class="top-bar__link" href="https://www.openbrewerydb.org/" target="_blank">
+            <a class="top-bar__link" href="https://www.openbrewerydb.org/" target="_blank"
+               title="OpenBrewery DB website">
                 <i class="material-icons">link</i>
             </a>
         </nav>
@@ -58,6 +59,7 @@
             margin-left: auto;
             @include is-flex;
         }
+
         &__logo,
         &__link {
             @include is-flex-center-all;
@@ -66,6 +68,7 @@
             color: $color-font-light;
             text-decoration: none;
         }
+
         &__brand {
             @include is-flex-center-all;
             font-size: $font-size-title;

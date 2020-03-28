@@ -4,7 +4,7 @@
             <thead>
             <tr>
                 <td>
-                    <div v-if="brewery.latitude && brewery.longitude"
+                    <div v-if="brewery.latitude && brewery.longitude" title="Show on map"
                          @click="locateBrewery">
                         <i :class="{'b-list__item-action material-icons': true}">location_on</i>
                     </div>
@@ -22,19 +22,21 @@
             <tbody v-show="expand">
             <tr v-if="brewery.phone">
                 <td>
-                    <a :href="'tel:' + brewery.phone" class="b-list__item-action material-icons">call</a>
+                    <a :href="'tel:' + brewery.phone" title="Call the Brewery"
+                       class="b-list__item-action material-icons">call</a>
                 </td>
                 <td>{{brewery.phone}}</td>
             </tr>
             <tr v-if="brewery.website_url">
                 <td>
-                    <a :href="brewery.website_url" target="_blank" class="b-list__item-action material-icons">link</a>
+                    <a :href="brewery.website_url" title="Brewery Website" target="_blank"
+                       class="b-list__item-action material-icons">link</a>
                 </td>
                 <td>{{brewery.website_url}}</td>
             </tr>
             <tr v-if="brewery.address">
                 <td>
-                    <a :href="brewery.google_map_link" target="_blank"
+                    <a :href="brewery.google_map_link" target="_blank" title="Try to find on GoogleMaps"
                        class="b-list__item-action material-icons">map</a>
                 </td>
                 <td>{{brewery.address}}</td>
