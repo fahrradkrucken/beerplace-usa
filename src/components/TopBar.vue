@@ -1,6 +1,7 @@
 <template>
     <div class="top-bar">
         <div class="top-bar__link" title="Sidebar Toggle"
+             v-show="$route.name === 'Breweries'"
              @click="sidebarToggleEmit">
             <i class="material-icons">menu</i>
         </div>
